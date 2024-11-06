@@ -1,0 +1,406 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* global styles */
+:root{
+    --white:#fff;
+    --lt-purple: #bcb9df;
+    --green: #26c485;
+    --dk-green: #003e1f;
+    --indigo: #724cf9;
+	--hot-pink:#DE0B63;
+    --black: #000;
+    --gray: #555;
+	--switch:#7a7a7a88;
+    --box-shadow: -5px 5px 5px var(--white);
+	--hover-shadow: -3px 3px 6px var(--white);
+	font-family: "Dosis", sans-serif;
+	font-size: 16px;
+    --image-size: 400px;
+}
+html{
+	background-color: var(--lt-purple);
+}
+body{
+	color: var(--dk-green);
+	line-height: 1.35;
+	box-sizing: border-box;
+}
+a{
+	text-decoration:none;
+}
+h1 a{
+	font-family: "Kalam", cursive;
+	color: var(--white);
+}
+nav{
+	display:grid;
+}
+nav ul {
+	display: grid;
+	grid-template-columns:repeat(3, 1fr);
+	list-style: none;
+	padding-top:30px;
+}
+nav a, nav h2 {
+    border: var(--white) solid 1px;
+	padding:10px;
+	border-radius: 10px;
+	color:var(--indigo);
+	background-color: var(--white);
+}
+nav a:hover, nav h2:hover {
+	color:var(--white);
+	background-color: var(--indigo);
+}
+/* light to dark mode styles */
+.theme-switch{
+	background-color: var(--switch);
+	border-radius: 50px;
+	display:flex;
+	align-items: center;
+	gap:.5rem;
+	height: 35px;
+	padding:.5rem;
+	position: relative;
+	cursor:pointer;
+}
+#sun svg{
+	stroke:var(--green);
+}
+#moon svg{
+	stroke: var(--gray);
+}
+
+/* for the dark theme */
+.dark {
+    color: var(--white);
+	background-color: var(--indigo);
+}
+#sun svg.dark{
+	stroke: var(--gray);
+}
+#moon svg.dark{
+	stroke: var(--green);
+}
+
+/* Hidden content for screen reader users - code from: https://webaim.org/techniques/css/invisiblecontent/*/
+.sr-only {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+/* general styles */
+header, main, footer{
+	width: 100%;
+	margin: 0 auto;
+	font-family: "Dosis", sans-serif;
+}
+/* header & headings :D */
+header{
+	display: grid;
+	grid-template-columns: 1fr 1fr 80px;
+	margin: 0;
+	background-color: var(--indigo);
+	color:var(--white);
+}
+
+h1, h2, h3{
+	text-align: center;
+	font-weight: bold;
+}
+
+h1{
+	font-size: 2rem;
+	margin: 1rem;
+}
+
+h2{
+	font-size: 2rem;
+	margin: 5px;
+}
+
+h3{
+	font-size: 1.45rem;
+	margin: 0.5rem;
+}
+/* styles for the sections */
+img{
+	display: block;
+	margin: 0 auto;
+    width: var(--image-size);
+    border-radius: 25% 75% / 50%;
+}
+p{
+	max-width: 65ch;
+	padding: 1rem 0;
+	margin: 0 auto;
+}
+#about{
+    padding: 30px;
+    margin-top: 150px;
+}
+#about h2{
+	font-size: 50px;
+}
+#about p{
+	font-size: 25px;
+    margin-right: 100px;
+}
+#about img{
+    position: relative;
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+    float:left;
+	left:-40px;
+    top:-258px;
+    border-radius: 0% 0% 80%;
+}
+#products{
+	background-color: var(--green);
+	color:var(--white);
+	text-align: center;
+	padding: 1rem;
+	max-width: 1000px;
+    border-radius: 5% / 50%;
+	margin: 3rem auto;
+}
+#products .currentItem{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 2fr 1fr;
+	min-width: 880px;
+	gap: 1rem;
+	margin: 10px;
+}
+
+.hiddenItem{
+	display: none;
+}
+
+#switcherButtons{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1rem;
+	width: fit-content;
+	margin: 1rem auto;
+}
+
+#products img{
+	grid-row: 1/-1;
+	height: 400px;;
+    object-fit: cover;
+}
+#products h3{
+	grid-column: 2/-1;
+}
+#products a{
+	background-color: var(--white);
+	color:var(--indigo);
+	width: fit-content;
+	height: fit-content;
+	padding:5px;
+	border-radius: 5px;
+}
+#products a:hover, aside a:hover{
+    background-color: var(--indigo);
+    color: var(--white);
+}
+button{
+    background-color: var(--indigo);
+    color: var(--white);
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+}
+button:hover{
+    background-color: var(--white);
+    color: var(--indigo);
+}
+
+aside{
+    display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 60px;
+	margin: 100px auto;
+	max-width: 1000px;
+}
+aside section{
+	background: rgba(255, 255, 255, 0.5);
+	margin: 15px;
+	height: fit-content;
+	padding-bottom: 20px;
+    border-radius: 25px;
+	text-align: center;
+}
+aside p{
+	margin: 10px;
+	padding: 5px;
+	text-align: center;
+}
+aside section a{
+	background-color: var(--white);
+	color:var(--indigo);
+	padding:5px;
+	border-radius: 5px;
+}
+aside img{
+	border-radius: 0;
+	padding: 20px;
+	width:150px;
+}
+footer{
+	padding: 1rem 0;
+	text-align: center;
+	background-color: var(--dk-green);
+	color:var(--white);
+	position:relative;
+	bottom:0;
+	left:0;
+	right:0;
+	height:80px;
+	display: inline-block;
+}
+footer a{
+	color:var(--white);
+	padding: 2rem;
+}
+footer a[href="contact.html"]{
+	font-size: 20px;
+}
+
+/* PRODUCT PAGE */
+#buttons{
+	text-align: center;
+}
+#buttons button{
+	border: var(--white) 2px solid;
+	margin: 0 5px;
+}
+
+#contact h2{
+	margin-top:50px;
+	font-family: "Kalam", cursive;
+	font-size: 35px;
+}
+form{
+	display: block;
+	width: 300px;
+	text-align: center;
+	padding: 2rem;
+	margin: 10px auto;
+	color: var(--dk-green);
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 20px;
+	font-size: 1.1em;
+}
+input, label{
+	display: flex;
+	font-size: 1em;
+	margin: 15px auto;
+}
+
+.required{
+	display: inline-block;
+	color: var(--hot-pink);
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+
+#contact input{
+	padding: 0.25em 0.5em;
+	border: none;
+	border-radius: 5px;
+	height: 1.5em;
+	width: 95%;
+}
+
+#contact input[type=submit]{
+	padding: 0.75em;
+	width: 70%;
+	height: auto;
+	margin: auto;
+	color:var(--white);
+	background-color: var(--dk-green);
+	border-radius: 15px;
+	border: none;
+}
+
+textarea{
+	width: 100%;
+	border: none;
+	border-radius: 5px;
+	height: 5em;
+	margin-bottom: 1em;
+}
+
+input:focus, textarea:focus{
+	border-color: var(--pink);
+	box-shadow: 0 0 0 3px rgba(34, 34, 34, 0.3);
+	border-radius: 4px;
+}
+.messages{
+    display: none;
+    color: var(--hot-pink);
+    font-size: 1.2em;
+    margin: 0.25em 0;
+    font-weight: bold;
+}
+#confirm{
+	border: 2px solid var(--dk-green);
+	text-align: center;
+	width: 70%;
+	max-width: 75ch;
+	margin: 1rem auto;
+	padding: 2rem;
+}
