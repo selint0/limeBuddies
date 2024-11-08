@@ -181,6 +181,7 @@ img{
 }
 p{
 	max-width: 65ch;
+	font-size: 20px;
 	padding: 1rem 0;
 	margin: 0 auto;
 }
@@ -237,11 +238,12 @@ p{
 
 #products img{
 	grid-row: 1/-1;
-	height: 400px;;
+	height: 400px;
     object-fit: cover;
 }
 #products h3{
 	grid-column: 2/-1;
+	margin-top: 50px;
 }
 #products a{
 	background-color: var(--white);
@@ -319,18 +321,77 @@ footer a[href="contact.html"]{
 }
 
 /* PRODUCT PAGE */
-#buttons{
+#prod h2{
+	margin: 50px;
+	font-size: 3rem;
+	font-family: "Kalam", cursive;
+}
+#prod h3{
+	font-size: 2.5rem;
+}
+h4{
+	font-size: 2rem;
+}
+#prod button{
+    background-color: var(--green);
+}
+#prod button:hover{
+    background-color: var(--white);
+}
+#buttons1, #buttons2, #buttons3{
 	text-align: center;
 }
-#buttons button{
+#buttons1 button, #buttons2 button, #buttons3 button{
 	border: var(--white) 2px solid;
 	margin: 0 5px;
 }
+.carousel img{
+	height: 450px;
+    object-fit: cover;
+}
+#earringsP, #braceletsP, #necklacesP{
+	background-color: rgba(114, 76, 249, 0.5);
+	border-radius: 25px;
+	max-width:1200px;
+	margin:50px auto;
+	padding: 10px;
+}
+#boba, #travel, #wine{
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 50px 1fr;
+	min-width: 800px;
+	background-color: var(--lt-purple);
+    border-radius: 5% / 50%;
+	margin: 20px;
+	padding:10px;
+}
+#boba img, #travel img, #wine img{
+	grid-row: 1;
+}
+#boba h4, #travel h4, #wine h4{
+	grid-column: 2/-1;
+	margin-top:100px;
+}
+#boba p, #travel p, #wine p, #neck p, #brace p{
+	margin-top:170px;
+	font-size: 1.5rem;
+}
+#brace, #neck{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-width: 800px;
+	background-color: var(--lt-purple);
+    border-radius: 5% / 50%;
+	margin: 20px;
+	padding:10px;
+}
 
+/* CONTACT PAGE */
 #contact h2{
 	margin-top:50px;
 	font-family: "Kalam", cursive;
-	font-size: 35px;
+	font-size: 3rem;
 }
 form{
 	display: block;
@@ -385,8 +446,7 @@ textarea{
 }
 
 input:focus, textarea:focus{
-	border-color: var(--pink);
-	box-shadow: 0 0 0 3px rgba(34, 34, 34, 0.3);
+	border-color: var(--hot-pink);
 	border-radius: 4px;
 }
 .messages{

@@ -1,4 +1,4 @@
-'uses strict';
+"use strict"; 
 $("#theme-switch").on("click", function(){
     $("body").toggleClass("dark");
     $("#sun svg").toggleClass("dark");
