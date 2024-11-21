@@ -1,9 +1,4 @@
 "use strict"; 
-$("#theme-switch").on("click", function(){
-    $("body").toggleClass("dark");
-    $("#sun svg").toggleClass("dark");
-    $("#moon svg").toggleClass("dark");
-});
 
 let prod1 = $("section #earrings");
 let prod2 = $("section #bracelets");
@@ -15,6 +10,9 @@ $("#btn1").on("click", function(){
     prod2.removeClass("currentItem");
     prod3.addClass("hiddenItem");
     prod3.removeClass("currentItem");
+    $("#btn1").addClass("selected");
+    $("#btn2").removeClass("selected");
+    $("#btn3").removeClass("selected");
 });
 $("#btn2").on("click", function(){
     prod1.removeClass("currentItem");
@@ -23,6 +21,9 @@ $("#btn2").on("click", function(){
     prod2.addClass("currentItem");
     prod3.addClass("hiddenItem");
     prod3.removeClass("currentItem");
+    $("#btn1").removeClass("selected");
+    $("#btn2").addClass("selected");
+    $("#btn3").removeClass("selected");
 });
 $("#btn3").on("click", function(){
     prod1.addClass("hiddenItem");
@@ -31,4 +32,7 @@ $("#btn3").on("click", function(){
     prod2.removeClass("currentItem");
     prod3.removeClass("hiddenItem");
     prod3.addClass("currentItem");
+    $("#btn1").removeClass("selected");
+    $("#btn2").removeClass("selected");
+    $("#btn3").addClass("selected");
 });

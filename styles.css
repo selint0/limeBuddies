@@ -50,33 +50,42 @@ table {
 :root{
     --white:#fff;
     --lt-purple: #bcb9df;
-    --green: #26c485;
-    --dk-green: #003e1f;
-    --indigo: #724cf9;
+    --green: #7fc577;
+    --dk-green: #507c5c;
+    --indigo: #8463fc;
 	--hot-pink:#DE0B63;
-    --black: #000;
+    --black: #2e2e2e;
     --gray: #555;
-	--switch:#7a7a7a88;
-    --box-shadow: -5px 5px 5px var(--white);
-	--hover-shadow: -3px 3px 6px var(--white);
+	--switch:#e6e6e688;
 	font-family: "Dosis", sans-serif;
 	font-size: 16px;
     --image-size: 400px;
 }
 html{
-	background-color: var(--lt-purple);
+	background-image: linear-gradient(var(--indigo), var(--lt-purple), var(--lt-purple));
 }
 body{
-	color: var(--dk-green);
+	color: var(--black);
 	line-height: 1.35;
 	box-sizing: border-box;
 }
 a{
 	text-decoration:none;
+	font-weight: bold;
+}
+h1 img{
+	width: 60px;
+	padding:5px;
+	border-radius: 20px;
+	border:solid var(--white) 2px;
+	display: flex;
+	float:left;
+	margin-left:50px;
 }
 h1 a{
-	font-family: "Kalam", cursive;
+	font-family: "Kalam", cursive; 
 	color: var(--white);
+	margin:0;
 }
 nav{
 	display:grid;
@@ -88,45 +97,87 @@ nav ul {
 	padding-top:30px;
 }
 nav a, nav h2 {
-    border: var(--white) solid 1px;
+    border: var(--white) solid 2px;
 	padding:10px;
-	border-radius: 10px;
+    border-radius: 20px 50px / 50px 20px;
 	color:var(--indigo);
 	background-color: var(--white);
 }
 nav a:hover, nav h2:hover {
 	color:var(--white);
 	background-color: var(--indigo);
+	transition:1s;
 }
-/* light to dark mode styles */
-.theme-switch{
+#prodNav a[href="products.html"], #eventNav a[href="events.html"], #contactNav a[href="contact.html"]{
+	color:var(--white);
+	background-color: var(--indigo);
+}
+/* purple to green mode styles */
+#theme-switcher{
 	background-color: var(--switch);
 	border-radius: 50px;
 	display:flex;
 	align-items: center;
-	gap:.5rem;
-	height: 35px;
+	height: 50px;
 	padding:.5rem;
-	position: relative;
+	margin:7px;
 	cursor:pointer;
 }
-#sun svg{
-	stroke:var(--green);
+#theme-switcher svg{
+	fill:#CFF09E;
+	fill:#507C5C;
 }
-#moon svg{
-	stroke: var(--gray);
+/* for the green theme */
+body.green {
+	background-image: linear-gradient(var(--dk-green), var(--green), var(--green));
 }
-
-/* for the dark theme */
-.dark {
-    color: var(--white);
+header.green{
+	background-color: var(--dk-green);
+}
+nav a.green, #products a.green{
+	color:var(--dk-green);
+	background-color: var(--white);
+}
+nav a:hover.green, nav h2:hover.green, #products a:hover.green{
+	color:var(--white);
+	background-color: var(--dk-green);
+	transition:1s;
+}
+#prodNav a[href="products.html"].green, #eventNav a[href="events.html"].green, #contactNav a[href="contact.html"].green{
+	color:var(--white);
+	background-color: var(--dk-green);
+}
+#products.green{
+	background-color: var(--indigo);
+	color:var(--white);
+}
+#products button.green{
+	border: var(--white) solid 2px;
+}
+#products h2.green, #products h3.green{
+	color:var(--white);
+}
+#earringsP.green, #braceletsP.green, #necklacesP.green{
+	background-color: rgba(80, 124, 92, 0.5);
+}
+#boba.green, #travel.green, #wine.green, #neck.green, #brace.green{
+	background-color: var(--green);
+}
+#future.green, #past.green{
 	background-color: var(--indigo);
 }
-#sun svg.dark{
-	stroke: var(--gray);
+div.accordion div.green{
+	background-color: var(--green);
+	color:var(--black);
 }
-#moon svg.dark{
-	stroke: var(--green);
+div.accordion h3.green{
+	background-color: var(--lt-purple);
+}
+form.green{
+	color: var(--indigo);
+}
+#contact input[type=submit].green{
+	background-color: var(--indigo);
 }
 
 /* Hidden content for screen reader users - code from: https://webaim.org/techniques/css/invisiblecontent/*/
@@ -148,18 +199,20 @@ header, main, footer{
 header{
 	display: grid;
 	grid-template-columns: 1fr 1fr 80px;
-	margin: 0;
+	padding-top: 10px;
 	background-color: var(--indigo);
 	color:var(--white);
+	position:sticky;
+	top:0;
+	z-index: 2;
 }
-
 h1, h2, h3{
 	text-align: center;
 	font-weight: bold;
+	color: var(--white);
 }
-
 h1{
-	font-size: 2rem;
+	font-size: 2.5rem;
 	margin: 1rem;
 }
 
@@ -181,19 +234,20 @@ img{
 }
 p{
 	max-width: 65ch;
-	font-size: 20px;
+	font-size: 25px;
 	padding: 1rem 0;
 	margin: 0 auto;
 }
 #about{
     padding: 30px;
     margin-top: 150px;
+    color: var(--white);
 }
 #about h2{
 	font-size: 50px;
+	margin-right:150px;
 }
 #about p{
-	font-size: 25px;
     margin-right: 100px;
 }
 #about img{
@@ -204,26 +258,34 @@ p{
     float:left;
 	left:-40px;
     top:-258px;
-    border-radius: 0% 0% 80%;
+    border-radius: 0% 0% 70%;
 }
 #products{
 	background-color: var(--green);
-	color:var(--white);
+	color:var(--black);
 	text-align: center;
-	padding: 1rem;
+	padding: 10px;
 	max-width: 1000px;
     border-radius: 5% / 50%;
-	margin: 3rem auto;
+	margin: 50px auto;
 }
-#products .currentItem{
+#products p{
+	max-height: 180px;
+}
+section#products .currentItem{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 2fr 1fr;
 	min-width: 880px;
-	gap: 1rem;
-	margin: 10px;
+	align-items: center;
 }
-
+#products h2, #products h3{
+	color:var(--black);
+}
+#products h2{
+	width: fit-content;
+	margin: 10px auto;
+}
 .hiddenItem{
 	display: none;
 }
@@ -243,30 +305,46 @@ p{
 }
 #products h3{
 	grid-column: 2/-1;
-	margin-top: 50px;
+	margin-top: 60px;
+	margin-right:30px;
+	font-size: 25px;
+}
+#products p{
+	margin:10px;
+	margin-right: 40px;
 }
 #products a{
 	background-color: var(--white);
 	color:var(--indigo);
 	width: fit-content;
 	height: fit-content;
+	margin-left:190px;
 	padding:5px;
-	border-radius: 5px;
+    border-radius: 30px 30px / 60px 60px;
 }
 #products a:hover, aside a:hover{
     background-color: var(--indigo);
     color: var(--white);
+	transition:1s;
+}
+#products button.selected{
+	background-color: var(--white);
+	color:var(--indigo);
 }
 button{
     background-color: var(--indigo);
     color: var(--white);
-    border-radius: 15px;
+    border-radius: 30px 30px / 60px 60px;
     border: none;
-    padding: 10px;
+    padding: 15px;
+	font-weight: bold;
+	font-size:16px;
+	margin: 0 50px;
 }
 button:hover{
     background-color: var(--white);
     color: var(--indigo);
+	transition:1s;
 }
 
 aside{
@@ -274,26 +352,29 @@ aside{
 	grid-template-columns: 1fr 1fr 1fr;
 	padding: 60px;
 	margin: 100px auto;
-	max-width: 1000px;
 }
 aside section{
 	background: rgba(255, 255, 255, 0.5);
 	margin: 15px;
-	height: fit-content;
+	height:470px;
 	padding-bottom: 20px;
-    border-radius: 25px;
+    border-radius: 50px 50px / 30px 60px;
 	text-align: center;
+}
+aside h2{
+	color: var(--black);
 }
 aside p{
 	margin: 10px;
-	padding: 5px;
+	padding: 15px 5px;
 	text-align: center;
 }
 aside section a{
 	background-color: var(--white);
 	color:var(--indigo);
-	padding:5px;
-	border-radius: 5px;
+	padding:10px;
+	margin-top: 20px;
+    border-radius: 20px 50px / 50px 20px;
 }
 aside img{
 	border-radius: 0;
@@ -305,12 +386,7 @@ footer{
 	text-align: center;
 	background-color: var(--dk-green);
 	color:var(--white);
-	position:relative;
-	bottom:0;
-	left:0;
-	right:0;
 	height:80px;
-	display: inline-block;
 }
 footer a{
 	color:var(--white);
@@ -319,6 +395,7 @@ footer a{
 footer a[href="contact.html"]{
 	font-size: 20px;
 }
+
 
 /* PRODUCT PAGE */
 #prod h2{
@@ -332,23 +409,30 @@ footer a[href="contact.html"]{
 h4{
 	font-size: 2rem;
 }
-#prod button{
-    background-color: var(--green);
+.carousel {
+	height: 500px;
+	width: 500px;
+	perspective: 500px;
+	display: grid;
+	grid-template-columns: 20px 20px 20px;
+	margin:0 auto;
 }
-#prod button:hover{
-    background-color: var(--white);
+
+.carousel .carousel-item {
+	cursor: grab;
+	width: 400px;
 }
-#buttons1, #buttons2, #buttons3{
-	text-align: center;
+
+.carousel .carousel-item:active {
+	cursor:grab;
 }
-#buttons1 button, #buttons2 button, #buttons3 button{
-	border: var(--white) 2px solid;
-	margin: 0 5px;
-}
-.carousel img{
+
+.carousel .carousel-item img {
 	height: 450px;
     object-fit: cover;
+	width: 100%;
 }
+
 #earringsP, #braceletsP, #necklacesP{
 	background-color: rgba(114, 76, 249, 0.5);
 	border-radius: 25px;
@@ -357,29 +441,22 @@ h4{
 	padding: 10px;
 }
 #boba, #travel, #wine{
-	display:grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 50px 1fr;
 	min-width: 800px;
 	background-color: var(--lt-purple);
     border-radius: 5% / 50%;
 	margin: 20px;
 	padding:10px;
 }
-#boba img, #travel img, #wine img{
-	grid-row: 1;
-}
 #boba h4, #travel h4, #wine h4{
-	grid-column: 2/-1;
-	margin-top:100px;
+	margin:20px;
+	text-align: center;
 }
 #boba p, #travel p, #wine p, #neck p, #brace p{
-	margin-top:170px;
+	margin:0 auto;
+	text-align: center;
 	font-size: 1.5rem;
 }
 #brace, #neck{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
 	min-width: 800px;
 	background-color: var(--lt-purple);
     border-radius: 5% / 50%;
@@ -387,9 +464,38 @@ h4{
 	padding:10px;
 }
 
+/* EVENTS PAGE WOOOOO */
+#future, #past{
+	background-color: var(--dk-green);
+	margin: 30px auto;
+	max-width: 1000px;
+	padding: 20px;
+	border-radius: 70px 30px / 30px 60px;
+}
+div.accordion div{
+	background-color: var(--lt-purple);
+	color:var(--white);
+	display: flex;
+	font-family: "Dosis", sans-serif;
+	font-size: 25px;
+	margin:0 auto;
+}
+div.accordion div div{
+	margin-top: 100px;
+}
+div.accordion h3{
+	background-color: var(--green);
+	font-family: "Dosis", sans-serif;
+}
+#future img, #past img{
+	border-radius: 0%;
+	height: 400px;
+	width: auto;
+}
+
 /* CONTACT PAGE */
 #contact h2{
-	margin-top:50px;
+	margin-top:90px;
 	font-family: "Kalam", cursive;
 	font-size: 3rem;
 }
@@ -398,10 +504,10 @@ form{
 	width: 300px;
 	text-align: center;
 	padding: 2rem;
-	margin: 10px auto;
+	margin: 100px auto;
 	color: var(--dk-green);
 	background: rgba(255, 255, 255, 0.5);
-	border-radius: 20px;
+	border-radius: 50px 50px / 30px 60px;
 	font-size: 1.1em;
 }
 input, label{

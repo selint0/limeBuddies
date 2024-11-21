@@ -1,47 +1,55 @@
 [{
-    "event":"Fall Festivalq",
+    "event":"Fall Festival",
     "street_name":"510 Red Cloud Trail",
+    "date":"Oct 24",
     "zip_code":null,
     "email":"lmaggs0@sun.com",
-    "time":"2:47 AM"
+    "time":"2:47 PM"
 },
 {
-    "event":"",
+    "event":"Early Morning Market",
     "street_name":"994 Crownhardt Park",
+    "date":"Feb 7",
     "zip_code":null,
     "email":"bwannell9w@pinterest.com",
     "time":"4:07 AM"
 },
 {
-    "event":"",
+    "event":"Summer Evening Market",
     "street_name":"93 Sauthoff Alley",
+    "date":"Jul 24",
     "zip_code":null,
     "email":"lmarguerite9x@nyu.edu",
     "time":"10:38 PM"
 },
 {
-    "event":"",
+    "event":"Portage Park Festival",
     "street_name":"347 Portage Court",
+    "date":"Nov 4",
     "zip_code":null,
     "email":"ggonnin9y@histats.com",
     "time":"7:24 AM"
 },
 {
-    "event":"",
-    "street_name":"508 Continental Street","zip_code":null,
+    "event":"Downtown Market",
+    "street_name":"508 Continental Street",
+    "date":"April 6",
+    "zip_code":null,
     "email":"adechelle9z@360.cn",
     "time":"3:21 PM"
 },
 {
-    "event":"",
+    "event":"Winter Wonderland",
     "street_name":"32791 Hagan Center",
+    "date":"Dec 8",
     "zip_code":"21110",
     "email":"dmuggeridgea0@unesco.org",
     "time":"10:31 PM"
 },
 {
-    "event":"",
+    "event":"Spring Festival",
     "street_name":"269 Esch Crossing",
+    "date":"March 24",
     "zip_code":"177089",
     "email":"banthoinea1@themeforest.net",
     "time":"2:30 PM"
@@ -49,13 +57,15 @@
 {
     "event":"Midnight Market",
     "street_name":"8824 Haas Crossing",
+    "date":"Jun 24",
     "zip_code":null,
     "email":"tsapwella2@weather.com",
     "time":"12:00 AM"
 },
 {
-    "event":"",
+    "event":"Mint Market",
     "street_name":"91 Granby Center",
+    "date":"Jan 24",
     "zip_code":null,
     "email":"nimpletona3@pinterest.com",
     "time":"9:46 AM"
