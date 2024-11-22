@@ -410,7 +410,7 @@ h4{
 	font-size: 2rem;
 }
 .carousel {
-	height: 500px;
+	height: 400px;
 	width: 500px;
 	perspective: 500px;
 	display: grid;
@@ -420,7 +420,7 @@ h4{
 
 .carousel .carousel-item {
 	cursor: grab;
-	width: 400px;
+	width: 350px;
 }
 
 .carousel .carousel-item:active {
@@ -428,7 +428,7 @@ h4{
 }
 
 .carousel .carousel-item img {
-	height: 450px;
+	height: 400px;
     object-fit: cover;
 	width: 100%;
 }
