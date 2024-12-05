@@ -65,6 +65,7 @@ html{
 	background-image: linear-gradient(var(--indigo), var(--lt-purple), var(--lt-purple));
 }
 body{
+	background-image: url("images/green-dust-and-scratches.png");
 	color: var(--black);
 	line-height: 1.35;
 	box-sizing: border-box;
@@ -123,13 +124,15 @@ nav a:hover, nav h2:hover {
 	margin:7px;
 	cursor:pointer;
 }
-#theme-switcher svg{
-	fill:#CFF09E;
-	fill:#507C5C;
-}
 /* for the green theme */
-body.green {
+#theme-switcher svg g path.green{
+	fill:var(--lt-purple);
+}
+html.green{
 	background-image: linear-gradient(var(--dk-green), var(--green), var(--green));
+}
+body.green {
+	background-image: url("images/green-dust-and-scratches.png");
 }
 header.green{
 	background-color: var(--dk-green);
@@ -259,7 +262,7 @@ p{
 	left:-40px;
     top:-258px;
     border-radius: 0% 0% 70%;
-}
+} 
 #products{
 	background-color: var(--green);
 	color:var(--black);
@@ -375,6 +378,7 @@ aside section a{
 	padding:10px;
 	margin-top: 20px;
     border-radius: 20px 50px / 50px 20px;
+	display: flexbox;
 }
 aside img{
 	border-radius: 0;
@@ -387,13 +391,14 @@ footer{
 	background-color: var(--dk-green);
 	color:var(--white);
 	height:80px;
+	transition: transform .5s; 
 }
 footer a{
 	color:var(--white);
 	padding: 2rem;
 }
-footer a[href="contact.html"]{
-	font-size: 20px;
+footer svg:hover{
+	transform: scale(1.2);
 }
 
 
@@ -515,15 +520,12 @@ input, label{
 	font-size: 1em;
 	margin: 15px auto;
 }
-
 .required{
 	display: inline-block;
 	color: var(--hot-pink);
 	font-size: 1.1em;
 	font-weight: bold;
 }
-
-
 #contact input{
 	padding: 0.25em 0.5em;
 	border: none;
@@ -531,18 +533,17 @@ input, label{
 	height: 1.5em;
 	width: 95%;
 }
-
 #contact input[type=submit]{
 	padding: 0.75em;
 	width: 70%;
 	height: auto;
 	margin: auto;
+	margin-top: 10px;
 	color:var(--white);
 	background-color: var(--dk-green);
 	border-radius: 15px;
 	border: none;
 }
-
 textarea{
 	width: 100%;
 	border: none;
@@ -550,23 +551,11 @@ textarea{
 	height: 5em;
 	margin-bottom: 1em;
 }
-
-input:focus, textarea:focus{
-	border-color: var(--hot-pink);
-	border-radius: 4px;
-}
-.messages{
-    display: none;
-    color: var(--hot-pink);
-    font-size: 1.2em;
-    margin: 0.25em 0;
-    font-weight: bold;
-}
 #confirm{
 	border: 2px solid var(--dk-green);
+	border-radius: 50px 50px / 30px 60px;
+	background: rgba(255, 255, 255, 0.5);
 	text-align: center;
-	width: 70%;
-	max-width: 75ch;
+	width: 400px;
 	margin: 1rem auto;
-	padding: 2rem;
 }
